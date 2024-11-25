@@ -203,6 +203,10 @@ Install Newman:
 
     npm install -g newman
 
+Install Newman Reporter HTML
+
+    npm install -g newman-reporter-html
+
 Run the collection:
 
     newman run OpencartCollection.json.json 
