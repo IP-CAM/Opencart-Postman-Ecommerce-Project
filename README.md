@@ -2,27 +2,33 @@
 
 This repository contains API tests for the Cart Module of the OpenCart application, implemented using Postman. 
 
-The project includes API chaining, dynamic variable handling, and comprehensive validations to ensure accurate testing of cart-related operations.
+The project includes API chaining, dynamic variable handling, and comprehensive validations to ensure accurate testing of cart-related operations 
+
+like adding, updating, retrieving, and removing products.
+
+
 
 **Key Features**
 
-Collection Variables:
+**Collection Variables:**
 
 ip and baseurl are stored at the collection level to simplify URL management across requests.
 
-API Chaining:
+**API Chaining:**
 
-Extracted api_token from the session creation response and reused it for all subsequent requests.
+Extracted api_token from the session creation response and reused it for all subsequent requests for Authorization
 
 Extracted cart_id from the Get Cart Content request and reused it in Edit and Remove operations.
 
-Dynamic Scripting:
+**Dynamic Scripting:**
 
 Scripts were used to validate responses and store dynamic data as collection variables.
 
-Comprehensive Validation:
+**Comprehensive Validation:**
 
 Response codes and messages were validated for all requests in the Postman test scripts.
+
+
 
 **Prerequisites**
 
@@ -34,15 +40,16 @@ XAMPP: Installed to run OpenCart locally.
 
 OpenCart: Frontend and backend applications downloaded and configured.
 
-Environment Variables: API username, API key, and base URL properly set up.
 
-Setting Up OpenCart
+**Setting Up OpenCart**
+
 
 1. Download OpenCart
 
 Visit the official OpenCart download page.
 
 Download the latest version of OpenCart.
+
 
 2. Install XAMPP
 
@@ -51,6 +58,7 @@ Download XAMPP from the official website.
 Install XAMPP and launch the Control Panel.
 
 Start the Apache and MySQL modules.
+
 
 3. Set Up OpenCart in XAMPP
 
@@ -68,6 +76,8 @@ Admin Credentials: Set up an admin username and password for the OpenCart backen
 
 After installation, access the OpenCart backend at http://localhost/opencart/admin.
 
+
+
 4. Configure API User
 
 Log in to the OpenCart backend.
@@ -80,47 +90,60 @@ Enable the API user and save the changes.
 
 Ensure the IP address of your testing machine is added to the allowed IP list for the API.
 
-API Endpoints and Workflow
 
-Create Session
+**Project Structure**
+
+opencart-api-testing/
+│
+├── opencart-cart-module-collection.json
+
+│   ├──   POST create new session
+
+│   ├──   POST Add product to the cart
+
+│   ├──   GET Get cart content
+
+│   ├──   POST Edit product quantity in the cart
+
+│   └──  POST Remove product from cart
+
+
+
+**API Endpoints and Workflow**
+
+**Create Session**
 
 Endpoint: /api/login
 
 Method: POST
 
-Request:
+Request Body: API username and API key.
 
-Body: API username and API key.
-
-Workflow:
+Workflow: 
 
 Validate response code and message.
 
 Extract api_token from the response body and store it as a collection variable.
 
-Add Product to Cart
+**Add Product to Cart**
 
 Endpoint: /api/cart/add
 
 Method: POST
 
-Request:
-
 Authorization: api_token.
 
-Payload: product_id and quantity.
+Request Body: product_id and quantity.
 
 Workflow:
 
 Validate response code and message.
 
-Get Cart Content
+**Get Cart Content**
 
 Endpoint: /api/cart/products
 
 Method: GET
-
-Request:
 
 Authorization: api_token.
 
@@ -128,35 +151,31 @@ Workflow:
 
 Validate response code.
 
-Extract cart_id and store it as a collection variable.
+Extract cart_id from the Response body and store it as a collection variable.
 
-Edit Product Quantity
+**Edit Product Quantity**
 
 Endpoint: /api/cart/edit
 
 Method: POST
 
-Request:
-
 Authorization: api_token.
 
-Payload: cart_id and new quantity.
+Request Body: cart_id and new quantity.
 
 Workflow:
 
 Validate response code and message.
 
-Remove Product from Cart
+**Remove Product from Cart**
 
 Endpoint: /api/cart/remove
 
 Method: POST
 
-Request:
-
 Authorization: api_token.
 
-Payload: cart_id.
+Request Body: cart_id.
 
 Workflow:
 
@@ -180,15 +199,15 @@ Execute the collection.
 
 Install Newman:
 
-npm install -g newman
+    npm install -g newman
 
 Run the collection:
 
-newman run opencart-cart-module-collection.json 
+    newman run opencart-cart-module-collection.json 
 
 Generate HTML Report
 
-newman run opencart-cart-module-collection.json -r html
+    newman run opencart-cart-module-collection.json -r html
 
 
 
