@@ -2,9 +2,9 @@
 
 This repository contains API tests for the Cart Module of the OpenCart application, implemented using Postman. 
 
-The project includes API chaining, dynamic variable handling, and comprehensive validations to ensure accurate testing of cart-related operations 
+The project includes API chaining, dynamic variable handling, and comprehensive validations to ensure accurate testing of cart-related 
 
-like adding, updating, retrieving, and removing products.
+operations like adding, updating, retrieving, and removing products.
 
 
 
@@ -46,56 +46,58 @@ OpenCart: Frontend and backend applications downloaded and configured.
 
 1. Download OpenCart
 
-Visit the official OpenCart download page.
+   Visit the official OpenCart download page.
 
-Download the latest version of OpenCart.
+   Download the latest version of OpenCart.
 
 
 2. Install XAMPP
 
-Download XAMPP from the official website.
+   Download XAMPP from the official website.
 
-Install XAMPP and launch the Control Panel.
+   Install XAMPP and launch the Control Panel.
 
-Start the Apache and MySQL modules.
+   Start the Apache and MySQL modules.
 
 
 3. Set Up OpenCart in XAMPP
 
-Extract the downloaded OpenCart archive.
+   Extract the downloaded OpenCart archive.
 
-Copy the extracted files into the htdocs folder of your XAMPP installation directory (e.g., C:\xampp\htdocs\opencart).
+   Copy the extracted files into the htdocs folder of your XAMPP installation directory (e.g., C:\xampp\htdocs\opencart).
 
-Open a web browser and navigate to http://localhost/opencart/ to begin the installation wizard.
+   Open a web browser and navigate to http://localhost/opencart/ to begin the installation wizard.
 
-Follow the on-screen instructions to configure:
+   Follow the on-screen instructions to configure:
 
-Database Connection: Provide MySQL credentials (default: username root and no password).
+   Database Connection: Provide MySQL credentials (default: username root and no password).
 
-Admin Credentials: Set up an admin username and password for the OpenCart backend.
+   Admin Credentials: Set up an admin username and password for the OpenCart backend.
 
-After installation, access the OpenCart backend at http://localhost/opencart/admin.
+   After installation, access the OpenCart backend at http://localhost/opencart/admin.
 
 
 
 4. Configure API User
 
-Log in to the OpenCart backend.
+   Log in to the OpenCart backend.
 
-Navigate to System > Users > API.
+   Navigate to System > Users > API.
 
-Add a new API user with a username (e.g., test_user) and generate an API key.
+   Add a new API user with a username (e.g., test_user) and generate an API key.
 
-Enable the API user and save the changes.
+   Enable the API user and save the changes.
 
-Ensure the IP address of your testing machine is added to the allowed IP list for the API.
+   Ensure the IP address of your testing machine is added to the allowed IP list for the API.
 
 
 **Project Structure**
 
 opencart-api-testing/
+
 │
-├── opencart-cart-module-collection.json
+
+├── OpencartCollection.json
 
 │   ├──   POST create new session
 
@@ -203,11 +205,11 @@ Install Newman:
 
 Run the collection:
 
-    newman run opencart-cart-module-collection.json 
+    newman run OpencartCollection.json.json 
 
 Generate HTML Report
 
-    newman run opencart-cart-module-collection.json -r html
+    newman run OpencartCollection.json -r html
 
 
 
