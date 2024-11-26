@@ -216,6 +216,17 @@ Generate HTML Report
     newman run OpencartCollection.json -r html
 
 
+**Report Screenshots**
+
+**Report1**
+
+![Opencart ss1](Opencart%20screenshots/Opencart%20ss1.PNG)
+
+**Report2**
+
+![Opencart ss2](Opencart%20screenshots/Opencart%20ss2.PNG)
+
+
 
 
 
